@@ -27,7 +27,15 @@ module.exports = {
   publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
-  lintOnSave: process.env.NODE_ENV === 'development',
+  lintOnSave: false,
+  css: {
+    loaderOptions: {
+      sass: {
+        // 这里的选项会传递给 sass-loader
+        prependData: '@import "@/styles/index.scss";'
+      }
+  }
+ },
   productionSourceMap: false,
   devServer: {
     port: port,
