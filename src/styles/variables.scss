@@ -1,18 +1,21 @@
-// sidebar
-$menuText:#bfcbd9;
-$menuActiveText:#409EFF;
+// sidebar 颜色
+$menuText:#92A1CA;
+$menuActiveText: #FFFFFF;
 $subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
-$menuBg:#304156;
-$menuHover:#263445;
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
-$sideBarWidth: 210px;
+$menuBg:#292E5D;
+$menuHover:rgba(63, 101, 236, 0.6);
+$subMenuBg:rgba(62, 101, 236, 0.2);
+$subMenuHover:rgba(63, 101, 236, 0.6);
+
+// 全局侧边栏
+$sideBarWidth: 236px;
 
 // 设置全局主色
 $base-main-color: #3E65EC;
 $base-assist-first-color: #00B5BA;
 $base-assist-second-color:  #FF9C42;
-$base-nav-color:  #292E5D;
+$base-nav-color: #292E5D;
+$base-logo-color: #3F66ED;
 // 设置全局背景色
 $base-bg-color:#F3F4FB;
 $base-table-color:#F7F7F7;
@@ -46,27 +49,4 @@ $base-text-title-family:'AlibabaPuHuiTiB';
   subMenuBg: $subMenuBg;
   subMenuHover: $subMenuHover;
   sideBarWidth: $sideBarWidth;
-//   theme-main-color:$base-main-color;
-//   theme-assist-first-color: $base-assist-first-color;
-//   theme-assist-second-color:  $base-assist-second-color;
-//   theme-nav-color: $base-nav-color;
-//   // 设置全局背景色
-//   theme-bg-color: $base-bg-color;
-//   theme-table-color:$base-table-color;
-//   theme-hint-color:$base-hint-color;
-//   theme-white-color: $base-white-color;
-//   // 设置全局分割线
-//   theme-partition-color:$base-partition-color;
-//   // 设置全局文字颜色
-//   theme-text-stair-color:$base-text-stair-color;
-//   theme-text-second-color:$base-text-second-color;
-//   theme-text-tips-color:$base-text-tips-color;
-//   theme-text-hits-color:$base-text-hits-color;
-//   theme-text-Invert-color:$base-text-Invert-color;
-//   //设置全局标签色
-//   theme-tag-first-color:$base-tag-first-color;
-//   theme-tag-second-color:$base-tag-second-color;
-//   theme-tag-three-color:$base-tag-three-color;
-//   theme-text-main-family:$base-text-main-family;
-//   theme-text-title-family:$base-text-title-family
 }
