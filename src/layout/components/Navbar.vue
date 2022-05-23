@@ -12,29 +12,11 @@
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar + '?imageView2/1/w/80/h/80'" class="user-avatar" />
-          <i class="el-icon-caret-bottom" />
         </div>
-        <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <router-link to="/">
-            <el-dropdown-item> Home </el-dropdown-item>
-          </router-link>
-          <a
-            target="_blank"
-            href="https://github.com/PanJiaChen/vue-admin-template/"
-          >
-            <el-dropdown-item>Github</el-dropdown-item>
-          </a>
-          <a
-            target="_blank"
-            href="https://panjiachen.github.io/vue-element-admin-site/#/"
-          >
-            <el-dropdown-item>Docs</el-dropdown-item>
-          </a>
-          <el-dropdown-item divided @click.native="logout">
-            <span style="display: block">Log Out</span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
+        <el-dropdown-menu />
       </el-dropdown>
+      <div class="user-name">{{ name }}</div>
+      <div class="logo-out" @click="logout"></div>
     </div>
   </div>
 </template>
@@ -50,7 +32,7 @@ export default {
     Hamburger,
   },
   computed: {
-    ...mapGetters(["sidebar", "avatar"]),
+    ...mapGetters(["sidebar", "avatar", "name"]),
   },
   methods: {
     toggleSideBar() {
@@ -93,7 +75,7 @@ export default {
     float: right;
     height: 100%;
     line-height: 50px;
-
+    margin-right: 35px;
     &:focus {
       outline: none;
     }
@@ -117,17 +99,15 @@ export default {
     }
 
     .avatar-container {
-      margin-right: 30px;
-
       .avatar-wrapper {
-        margin-top: 12px;
+        margin-top: 16px;
         position: relative;
 
         .user-avatar {
           cursor: pointer;
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
         }
 
         .el-icon-caret-bottom {
@@ -138,6 +118,39 @@ export default {
           font-size: 12px;
         }
       }
+    }
+    .user-name {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 25px;
+      height: 22px;
+      font-size: 16px;
+      font-family: $base-text-main-family;
+      font-weight: 400;
+      color: $base-text-stair-color;
+      line-height: 22px;
+      position: relative;
+      top: -12px;
+      &:after {
+        display: inline-block;
+        content: "";
+        width: 1px;
+        height: 22px;
+        border: 1px solid #e5e9ed;
+        position: relative;
+        left: 25px;
+        top: 6px;
+      }
+    }
+    .logo-out {
+      background-image: url("../../assets/login/logo_out.png");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      width: 19px;
+      height: 19px;
+      display: inline-block;
+      margin-bottom: 8px;
+      margin-left: 25px;
     }
   }
 }
