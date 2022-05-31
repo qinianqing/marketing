@@ -1,11 +1,11 @@
 // sidebar 颜色
-$menuText:#92A1CA;
+$menuText: #92A1CA;
 $menuActiveText: #FFFFFF;
-$subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
-$menuBg:#292E5D;
-$menuHover:rgba(63, 101, 236, 0.6);
-$subMenuBg:rgba(62, 101, 236, 0.2);
-$subMenuHover:rgba(63, 101, 236, 0.6);
+$subMenuActiveText: #f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+$menuBg: #292E5D;
+$menuHover: rgba(63, 101, 236, 0.2);
+$subMenuBg: rgba(62, 101, 236, 0.2);
+$subMenuHover: rgba(63, 101, 236, 0.6);
 
 // 全局侧边栏
 $sideBarWidth: 236px;
@@ -13,31 +13,32 @@ $sideBarWidth: 236px;
 // 设置全局主色
 $base-main-color: #3E65EC;
 $base-assist-first-color: #00B5BA;
-$base-assist-second-color:  #FF9C42;
+$base-assist-second-color: #FF9C42;
 $base-nav-color: #292E5D;
 $base-logo-color: #3F66ED;
 // 设置全局背景色
-$base-bg-color:#F3F4FB;
-$base-table-color:#F7F7F7;
-$base-hint-color:#F8F9FF;
-$base-white-color:#FFFFFF;
+$base-bg-color: #F3F4FB;
+$base-table-color: #F7F7F7;
+$base-hint-color: #F8F9FF;
+$base-white-color: #FFFFFF;
 // 设置全局分割线
-$base-partition-color:#E7E9EE;
+$base-partition-color: #E7E9EE;
 // 设置全局文字颜色
-$base-text-stair-color:#333333;
-$base-text-second-color:#666666;
-$base-text-tips-color:#999999;
-$base-text-hits-color:#ABABAB;
-$base-text-Invert-color:#FFFFFF;
+$base-text-stair-color: #333333;
+$base-text-second-color: #666666;
+$base-text-tips-color: #999999;
+$base-text-hits-color: #ABABAB;
+$base-text-Invert-color: #FFFFFF;
 //设置全局input颜色
-$base-input-border-color:#DDDDDD;
+$base-input-border-color: #DDDDDD;
 //设置全局标签色
-$base-tag-first-color:#EBF9F9;
-$base-tag-second-color:#EDF4FF;
-$base-tag-three-color:#FFB788;
+$base-tag-first-color: #EBF9F9;
+$base-tag-second-color: #EDF4FF;
+$base-tag-three-color: #FFB788;
 //设置全局字体
 $base-text-main-family: 'PingFangSC-Medium, PingFang SC';
-$base-text-title-family:'AlibabaPuHuiTiB';
+$base-text-title-family: 'AlibabaPuHuiTiB';
+
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {

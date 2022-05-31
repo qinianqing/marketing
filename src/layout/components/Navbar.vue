@@ -49,8 +49,6 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   height: 64px;
-  overflow: hidden;
-  position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 
@@ -61,7 +59,6 @@ export default {
     cursor: pointer;
     transition: background 0.3s;
     -webkit-tap-highlight-color: transparent;
-
     &:hover {
       background: rgba(0, 0, 0, 0.025);
     }
@@ -136,10 +133,10 @@ export default {
         content: "";
         width: 1px;
         height: 22px;
-        border: 1px solid #e5e9ed;
+        border: 0.5px solid #e5e9ed;
         position: relative;
         left: 25px;
-        top: 6px;
+        vertical-align: middle;
       }
     }
     .logo-out {

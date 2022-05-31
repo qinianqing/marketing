@@ -27,6 +27,8 @@
 
     .scrollbar-wrapper {
       overflow-x: hidden !important;
+      margin-right: -33px !important;
+      margin-top: 26px;
     }
 
     .el-scrollbar__bar.is-vertical {
@@ -35,6 +37,11 @@
 
     .el-scrollbar {
       height: 100%;
+      padding: 0 18px;
+    }
+
+    .el-scrollbar__view {
+      width: 200px !important;
     }
 
     &.has-logo {
@@ -54,7 +61,7 @@
     }
 
     .svg-icon {
-      margin-right: 16px;
+      margin-right: 20px;
     }
 
     .sub-el-icon {
@@ -71,8 +78,14 @@
     // menu hover
     .submenu-title-noDropdown,
     .el-submenu__title {
+      width: 200px;
+      height: 56px;
+
       &:hover {
         background-color: $menuHover  !important;
+        width: 200px;
+        height: 56px;
+        border-radius: 8px;
       }
     }
 
@@ -82,12 +95,9 @@
 
     & .nest-menu .el-submenu>.el-submenu__title,
     & .el-submenu .el-menu-item {
-      min-width: $sideBarWidth  !important;
       background-color: $subMenuBg  !important;
-
-      &:hover {
-        background-color: $subMenuHover  !important;
-      }
+      width: 200px;
+      height: 56px;
     }
   }
 
@@ -133,6 +143,7 @@
 
         .el-submenu__icon-arrow {
           display: none;
+          margin-top: -5px !important;
         }
       }
     }
@@ -153,7 +164,8 @@
   }
 
   .el-menu--collapse .el-menu .el-submenu {
-    min-width: $sideBarWidth  !important;
+    width: 200px;
+    height: 56px;
   }
 
   // mobile responsive
@@ -189,7 +201,7 @@
 .el-menu--vertical {
   &>.el-menu {
     .svg-icon {
-      margin-right: 16px;
+      margin-right: 20px;
     }
 
     .sub-el-icon {
@@ -197,6 +209,8 @@
       margin-left: -2px;
     }
   }
+
+
 
   .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {
