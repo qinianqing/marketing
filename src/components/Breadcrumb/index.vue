@@ -1,5 +1,9 @@
 <template>
-  <el-breadcrumb class="app-breadcrumb" separator="/">
+  <el-breadcrumb class="app-breadcrumb" separator=">">
+    <div class="location-logo">
+      <img src="../../assets/header/wz.png" alt="" />
+    </div>
+    <div class="location">当前位置:</div>
     <transition-group name="breadcrumb">
       <el-breadcrumb-item v-for="(item, index) in levelList" :key="item.path">
         <span
@@ -37,9 +41,8 @@ export default {
         (item) => item.meta && item.meta.title
       );
       const first = matched[0];
-
       if (!this.isDashboard(first)) {
-        matched = [{ path: "/dashboard", meta: { title: "Dashboard" } }].concat(
+        matched = [{ path: "/dashboard", meta: { title: "首页" } }].concat(
           matched
         );
       }
@@ -78,13 +81,38 @@ export default {
 <style lang="scss" scoped>
 .app-breadcrumb.el-breadcrumb {
   display: inline-block;
-  font-size: 14px;
   line-height: 64px;
   margin-left: 8px;
-
+  font-size: 12px;
+  font-family: $base-text-main-family;
+  font-weight: 400;
+  color: $base-text-second-color;
   .no-redirect {
-    color: #97a8be;
     cursor: text;
+    font-size: 12px;
+    font-family: $base-text-main-family;
+    font-weight: 400;
+    color: $base-assist-first-color;
+  }
+  .location-logo {
+    float: left;
+    width: 11px;
+    height: 12px;
+    img {
+      width: 11px;
+      height: 12px;
+    }
+    line-height: 65px;
+    margin-right: 5px;
+  }
+  .location {
+    float: left;
+    font-size: 12px;
+    font-family: $base-text-main-family;
+    font-weight: 400;
+    color: $base-text-second-color;
+    line-height: 63px;
+    margin-right: 13px;
   }
 }
 </style>

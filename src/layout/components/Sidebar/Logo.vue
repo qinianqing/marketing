@@ -7,7 +7,7 @@
         class="sidebar-logo-link"
         to="/"
       >
-        <img v-if="logo" :src="logo" class="sidebar-logo" />
+        <img v-if="logo" :src="small_logo" class="sidebar-logo" />
         <h1 v-else class="sidebar-title">{{ title }}</h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
@@ -31,6 +31,7 @@ export default {
     return {
       title: "营销系统",
       logo: "https://cdn-scp.banu.cn/ideas/ideas/logo-marketing.png",
+      small_logo: "https://cdn-scp.banu.cn/ideas/ideas/logo_small.png",
     };
   },
 };
@@ -38,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .sidebarLogoFade-enter-active {
-  transition: opacity 1.5s;
+  transition: opacity 2s;
 }
 
 .sidebarLogoFade-enter,
@@ -91,6 +92,8 @@ export default {
 
   &.collapse {
     .sidebar-logo {
+      width: 42px;
+      height: 14px;
       margin-right: 0px;
     }
   }
