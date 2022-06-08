@@ -32,25 +32,70 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/customer',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
+    redirect: '/customer/manage',
+    name: 'Customer',
     meta: { title: '顾客中心', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
+        path: '/customer/manage',
+        name: 'CustomerManage',
+        component: () => import('@/views/customer/customerManage/index'),
         meta: { title: '顾客管理' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: '类标签管理' }
+        path: '/customer/group/manage',
+        name: 'CustomerGroupManage',
+        component: () => import('@/views/customer/customerGroupManage/index'),
+        meta: { title: '客群管理' }
+      },
+      {
+        path: '/customer/tag/manage',
+        name: 'CustomerTagManage',
+        component: () => import('@/views/customer/customerTagManage/index'),
+        meta: { title: '标签管理' }
+      },
+      {
+        path: '/customer/tag/type/manage',
+        name: 'CustomerTagTypeManage',
+        component: () => import('@/views/customer/customerTagTypeManage/index'),
+        meta: { title: '标签分类管理' }
       }
     ]
+  },
+  {
+    path: '/marketing',
+    component: Layout,
+    name: 'Marketing',
+    children: [{
+      path: '/marketing/center',
+      name: 'MarketingCenter',
+      component: () => import('@/views/marketing/index'),
+      meta: { title: '营销中心', icon: 'dashboard' }
+    }]
+  },
+  {
+    path: '/equity',
+    component: Layout,
+    name: 'Equity',
+    children: [{
+      path: '/equity/center',
+      name: 'EquityCenter',
+      component: () => import('@/views/equity/index'),
+      meta: { title: '权益中心', icon: 'dashboard' }
+    }]
+  },
+  {
+    path: '/data',
+    component: Layout,
+    name: 'Data',
+    children: [{
+      path: '/data/center',
+      name: 'DataCenter',
+      component: () => import('@/views/data/index'),
+      meta: { title: '数据分析', icon: 'dashboard' }
+    }]
   },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
