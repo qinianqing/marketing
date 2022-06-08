@@ -78,32 +78,39 @@
     // menu hover
     .submenu-title-noDropdown,
     .el-submenu__title {
-      width: 200px;
-      height: 56px;
 
       &:hover {
         background-color: $menuHover  !important;
-        width: 200px;
-        height: 56px;
         border-radius: 8px;
       }
     }
 
     .is-active>.el-submenu__title {
       color: $subMenuActiveText  !important;
+      border-radius: 8px;
     }
 
     & .nest-menu .el-submenu>.el-submenu__title,
     & .el-submenu .el-menu-item {
       background-color: $subMenuBg  !important;
-      width: 200px;
-      height: 56px;
     }
   }
 
   .hideSidebar {
     .sidebar-container {
       width: 80px !important;
+
+      .el-scrollbar {
+        .el-scrollbar__view {
+          width: 45px !important;
+
+          .el-menu div {
+            &:hover {
+              border-radius: 8px !important;
+            }
+          }
+        }
+      }
     }
 
     .main-container {
@@ -118,7 +125,7 @@
         padding: 0 !important;
 
         .svg-icon {
-          margin-left: 20px;
+          margin-left: 15px;
         }
 
         .sub-el-icon {
@@ -138,7 +145,7 @@
         }
 
         .sub-el-icon {
-          margin-left: 19px;
+          margin-left: 13px;
         }
 
         .el-submenu__icon-arrow {
@@ -161,11 +168,6 @@
         }
       }
     }
-  }
-
-  .el-menu--collapse .el-menu .el-submenu {
-    width: 200px;
-    height: 56px;
   }
 
   // mobile responsive
@@ -217,6 +219,7 @@
     &:hover {
       // you can use $subMenuHover
       background-color: $menuHover  !important;
+      border-radius: 8px;
     }
   }
 
