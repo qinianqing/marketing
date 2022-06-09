@@ -17,13 +17,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .app-main {
   /*50 = navbar  */
   min-height: calc(100vh - 65px);
   width: 100%;
   position: relative;
   overflow: hidden;
+  background-color: $base-bg-color;
 }
 .fixed-header + .app-main {
   padding-top: 50px;
