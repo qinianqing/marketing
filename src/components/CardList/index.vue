@@ -3,7 +3,12 @@
     <div v-for="(v, i) in cardList" :key="i">
       <div class="title">{{ v.title }}</div>
       <div class="list-container">
-        <div v-for="k in v.list" :key="k.ttile" class="item-container">
+        <div
+          v-for="k in v.list"
+          :key="k.ttile"
+          class="item-container"
+          :style="{ '--num': 100 }"
+        >
           <div class="item-box">
             <div class="item-logo">
               <img :src="k.logo" alt="" />
@@ -32,6 +37,7 @@ export default {
       default: [],
     },
   },
+
   methods: {},
   components: {
     countTo,
@@ -40,8 +46,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$dotNum: 3;
+
 .card-container {
   margin-top: 40px;
+  margin-bottom: 40px;
   width: 100%;
   .title {
     font-size: 18px;
@@ -70,10 +79,23 @@ export default {
     background-repeat: no-repeat;
     border-radius: 24px;
     margin-top: 20px;
+
     .item-container {
       width: calc(100% / 3);
       height: 180px;
       text-align: center;
+      position: relative;
+      &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        background-color: $base-partition-color;
+        right: 0;
+        top: calc(100% - 47) / 2;
+        width: 1px;
+        height: 47px;
+      }
+
       .item-box {
         margin-top: 38px;
         .item-title {
@@ -104,6 +126,44 @@ export default {
         font-weight: bold;
         color: $base-text-stair-color;
       }
+    }
+    .item-container:nth-child(3n + 3):after {
+      display: none;
+    }
+    .item-container:nth-child(3n-1)::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      background-color: #e7e9ee;
+      position: relative;
+      top: 180px;
+    }
+    .item-container:nth-child(3n)::before {
+      content: "";
+      display: inline-block;
+      width: 90%;
+      height: 1px;
+      background-color: #e7e9ee;
+      position: relative;
+      top: 180px;
+      right: 5%;
+    }
+    .item-container:nth-child(3n-2)::before {
+      content: "";
+      display: inline-block;
+      width: 90%;
+      height: 1px;
+      background-color: #e7e9ee;
+      position: relative;
+      top: 180px;
+      left: 5%;
+    }
+
+    .item-container:nth-last-child(-n + #{$dotNum})::before {
+      visibility: hidden;
+      //   background-color: red;
+      //   margin-top: 1000 px;
     }
   }
 }

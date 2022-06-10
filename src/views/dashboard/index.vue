@@ -61,6 +61,41 @@ export default {
             count: 6158088,
             logo: require("@/assets/dashboard/ic_home_dzd2.png"),
           },
+          {
+            title: "公众号粉丝数",
+            count: 6158088,
+            logo: require("@/assets/dashboard/ic_home_dzd2.png"),
+          },
+          {
+            title: "公众号粉丝数",
+            count: 6158088,
+            logo: require("@/assets/dashboard/ic_home_dzd2.png"),
+          },
+          {
+            title: "公众号粉丝数",
+            count: 6158088,
+            logo: require("@/assets/dashboard/ic_home_dzd2.png"),
+          },
+          {
+            title: "公众号粉丝数",
+            count: 6158088,
+            logo: require("@/assets/dashboard/ic_home_dzd2.png"),
+          },
+          {
+            title: "公众号粉丝数",
+            count: 6158088,
+            logo: require("@/assets/dashboard/ic_home_dzd2.png"),
+          },
+          {
+            title: "公众号粉丝数",
+            count: 6158088,
+            logo: require("@/assets/dashboard/ic_home_dzd2.png"),
+          },
+          {
+            title: "公众号粉丝数",
+            count: 6158088,
+            logo: require("@/assets/dashboard/ic_home_dzd2.png"),
+          },
         ],
       },
     ],

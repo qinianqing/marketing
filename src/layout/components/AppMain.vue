@@ -22,6 +22,7 @@ export default {
   /*50 = navbar  */
   min-height: calc(100vh - 65px);
   width: 100%;
+  min-width: 1030px;
   position: relative;
   overflow: hidden;
   background-color: $base-bg-color;
