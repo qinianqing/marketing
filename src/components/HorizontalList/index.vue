@@ -1,19 +1,21 @@
 <template>
   <div class="horizontal-container">
-    <div v-for="(v, i) in list" :key="i">
-      <div class="title">{{ v.title }}</div>
-      <div class="list-container">
-        <div v-for="k in v.list" :key="k.ttile" class="item-container">
-          <div class="item-title">{{ k.title }}</div>
-          <count-to
-            class="count"
-            :startVal="0"
-            :endVal="Number(k.count || 0)"
-            :duration="2000"
-          ></count-to>
-          <div class="item-logo">
-            <img :src="k.logo" alt="" />
-          </div>
+    <div class="title">{{ horizontalList.title }}</div>
+    <div class="list-container">
+      <div
+        v-for="k in horizontalList.list"
+        :key="k.ttile"
+        class="item-container"
+      >
+        <div class="item-title">{{ k.title }}</div>
+        <count-to
+          class="count"
+          :startVal="0"
+          :endVal="Number(k.count || 0)"
+          :duration="2000"
+        ></count-to>
+        <div class="item-logo">
+          <img :src="k.logo" alt="" />
         </div>
       </div>
     </div>
@@ -25,9 +27,9 @@ import countTo from "vue-count-to";
 export default {
   name: "HorizontalList",
   props: {
-    list: {
-      type: Array,
-      default: [],
+    horizontalList: {
+      type: Object,
+      default: {},
     },
   },
   methods: {},

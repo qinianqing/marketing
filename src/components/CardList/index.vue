@@ -1,27 +1,25 @@
 <template>
   <div class="card-container">
-    <div v-for="(v, i) in cardList" :key="i">
-      <div class="title">{{ v.title }}</div>
-      <div class="list-container">
-        <div
-          v-for="k in v.list"
-          :key="k.ttile"
-          class="item-container"
-          :style="{ '--num': 100 }"
-        >
-          <div class="item-box">
-            <div class="item-logo">
-              <img :src="k.logo" alt="" />
-            </div>
-            <div class="item-title">{{ k.title }}</div>
+    <div class="title">{{ cardList.title }}</div>
+    <div class="list-container">
+      <div
+        v-for="k in cardList.list"
+        :key="k.ttile"
+        class="item-container"
+        :class="`item-hidden-${num}`"
+      >
+        <div class="item-box">
+          <div class="item-logo">
+            <img :src="k.logo" alt="" />
           </div>
-          <count-to
-            class="count"
-            :startVal="0"
-            :endVal="Number(k.count || 0)"
-            :duration="2000"
-          ></count-to>
+          <div class="item-title">{{ k.title }}</div>
         </div>
+        <count-to
+          class="count"
+          :startVal="0"
+          :endVal="Number(k.count || 0)"
+          :duration="2000"
+        ></count-to>
       </div>
     </div>
   </div>
@@ -33,9 +31,15 @@ export default {
   name: "CardList",
   props: {
     cardList: {
-      type: Array,
-      default: [],
+      type: Object,
+      default: {},
     },
+  },
+  data() {
+    return {
+      num:
+        this.cardList.list.length % 3 === 0 ? 3 : this.cardList.list.length % 3,
+    };
   },
 
   methods: {},
@@ -160,10 +164,20 @@ $dotNum: 3;
       left: 5%;
     }
 
-    .item-container:nth-last-child(-n + #{$dotNum})::before {
-      visibility: hidden;
-      //   background-color: red;
-      //   margin-top: 1000 px;
+    .item-hidden-1 {
+      &:nth-last-child(-n + 1)::before {
+        visibility: hidden;
+      }
+    }
+    .item-hidden-2 {
+      &:nth-last-child(-n + 2)::before {
+        visibility: hidden;
+      }
+    }
+    .item-hidden-3 {
+      &:nth-last-child(-n + 3)::before {
+        visibility: hidden;
+      }
     }
   }
 }
