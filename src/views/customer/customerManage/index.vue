@@ -1,6 +1,8 @@
 <template>
   <div class="customer-manage-container">
-    <MainTitle :title="title"> <Search :options="options"></Search> </MainTitle>
+    <MainTitle :title="title">
+      <Search :options="options" @search="search"></Search>
+    </MainTitle>
   </div>
 </template>
 
@@ -106,8 +108,8 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
-      console.log("submit!");
+    search(data) {
+      console.log("submit!", data);
     },
   },
 };
