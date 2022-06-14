@@ -68,7 +68,5 @@ export default {
 <style lang="scss" scoped>
 .dashboard-container {
   width: 100%;
-  padding: 0 30px;
-  margin-top: 30px;
 }
 </style>

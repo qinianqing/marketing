@@ -1,89 +1,116 @@
 <template>
-  <div class="app-container">
-    <el-table
-      v-loading="listLoading"
-      :data="list"
-      element-loading-text="Loading"
-      border
-      fit
-      highlight-current-row
-    >
-      <el-table-column align="center" label="ID" width="95">
-        <template slot-scope="scope">
-          {{ scope.$index }}
-        </template>
-      </el-table-column>
-      <el-table-column label="Title">
-        <template slot-scope="scope"> {{ scope.row.title }}ss </template>
-      </el-table-column>
-      <el-table-column label="Author" width="110" align="center">
-        <template slot-scope="scope">
-          <span>{{ scope.row.author }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="Pageviews" width="110" align="center">
-        <template slot-scope="scope">
-          {{ scope.row.pageviews }}
-        </template>
-      </el-table-column>
-      <el-table-column
-        class-name="status-col"
-        label="Status"
-        width="110"
-        align="center"
-      >
-        <template slot-scope="scope">
-          <el-tag :type="scope.row.status | statusFilter">{{
-            scope.row.status
-          }}</el-tag>
-        </template>
-      </el-table-column>
-      <el-table-column
-        align="center"
-        prop="created_at"
-        label="Display_time"
-        width="200"
-      >
-        <template slot-scope="scope">
-          <i class="el-icon-time" />
-          <span>{{ scope.row.display_time }}</span>
-        </template>
-      </el-table-column>
-    </el-table>
+  <div class="customer-manage-container">
+    <MainTitle :title="title"> <Search :options="options"></Search> </MainTitle>
   </div>
 </template>
 
 <script>
-import { getList } from "@/api/table";
+import MainTitle from "@/components/MainTitle";
+import Search from "@/components/Search";
 
 export default {
-  filters: {
-    statusFilter(status) {
-      const statusMap = {
-        published: "success",
-        draft: "gray",
-        deleted: "danger",
-      };
-      return statusMap[status];
-    },
+  name: "CustomerManage",
+  components: { MainTitle, Search },
+  created() {
+    this.title = this.$route.meta.title;
   },
   data() {
     return {
-      list: null,
-      listLoading: true,
+      options: [
+        {
+          label: "手机号",
+          value: "",
+          type: "Tel",
+          key: "mobile",
+          clear: true, // 可选
+        },
+        {
+          label: "昵称",
+          value: "",
+          type: "Input",
+          key: "nick_name",
+          clear: true, // 可选
+        },
+        {
+          label: "会员等级",
+          value: "",
+          type: "Select",
+          key: "level",
+          multiple: false, // 可选
+          options: [
+            {
+              value: "0",
+              label: "不限",
+            },
+            {
+              value: "2",
+              label: "粉丝",
+            },
+            {
+              value: "3",
+              label: "肚侠",
+            },
+            {
+              value: "4",
+              label: "肚王",
+            },
+            {
+              value: "5",
+              label: "肚神",
+            },
+          ],
+          clear: true, // 可选
+        },
+
+        {
+          label: "顾客身份",
+          value: "",
+          type: "Select",
+          key: "role",
+          multiple: false, // 可选
+          options: [
+            {
+              value: "0",
+              label: "不限",
+            },
+            {
+              value: "1",
+              label: "会员",
+            },
+            {
+              value: "2",
+              label: "游客",
+            },
+          ],
+          clear: true, // 可选
+        },
+        {
+          label: "顾客状态",
+          value: "",
+          type: "Select",
+          key: "status",
+          multiple: false, // 可选
+          options: [
+            {
+              value: "1",
+              label: "启用",
+            },
+            {
+              value: "2",
+              label: "禁用",
+            },
+          ],
+          clear: true, // 可选
+        },
+      ],
     };
   },
-  created() {
-    this.fetchData();
-  },
   methods: {
-    fetchData() {
-      this.listLoading = true;
-      getList().then((response) => {
-        this.list = response.data.items;
-        this.listLoading = false;
-      });
+    onSubmit() {
+      console.log("submit!");
     },
   },
 };
 </script>
+<style lang="scss" scoped>
+</style>
