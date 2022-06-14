@@ -4,7 +4,7 @@
       :inline="true"
       :model="searchForm"
       :label-position="labelPosition"
-      label-width="100px"
+      label-width="80px"
       ref="searchForm"
     >
       <div
@@ -19,7 +19,7 @@
             :prop="item.key"
           >
             <el-input
-              style="width: 256px; margin-right: 69px"
+              style="width: 256px"
               :clearable="item.clear"
               v-model="searchForm[item.key]"
               placeholder="请输入"
@@ -38,7 +38,7 @@
               v-model="searchForm[item.key]"
               placeholder="请选择"
               v-if="item.type === 'Select'"
-              style="width: 256px; margin-right: 69px"
+              style="width: 256px"
             >
               <el-option
                 v-for="itemT in item.options"
@@ -61,7 +61,7 @@
               start-placeholder="开始日期"
               end-placeholder="结束日期"
               placeholder="请选择"
-              style="width: 256px; margin-right: 69px"
+              style="width: 256px"
             ></el-date-picker>
           </el-form-item>
           <!-- DateTimePicker -->
@@ -78,7 +78,7 @@
               start-placeholder="开始日期"
               end-placeholder="结束日期"
               align="right"
-              style="width: 256px; margin-right: 69px"
+              style="width: 256px"
             ></el-date-picker>
           </el-form-item>
         </div>
@@ -136,11 +136,7 @@ export default {
     }
   }
   .sure {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    position: absolute;
-    margin-top: 20px;
+    margin-left: 454px;
     .reset {
       width: 100px;
       height: 40px;

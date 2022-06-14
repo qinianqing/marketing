@@ -2,6 +2,7 @@
   <div class="customer-manage-container">
     <MainTitle :title="title">
       <Search :options="options" @search="search"></Search>
+      <CommonList></CommonList>
     </MainTitle>
   </div>
 </template>
@@ -9,10 +10,11 @@
 <script>
 import MainTitle from "@/components/MainTitle";
 import Search from "@/components/Search";
+import CommonList from "@/components/CommonList";
 
 export default {
   name: "CustomerManage",
-  components: { MainTitle, Search },
+  components: { MainTitle, Search, CommonList },
   created() {
     this.title = this.$route.meta.title;
   },
